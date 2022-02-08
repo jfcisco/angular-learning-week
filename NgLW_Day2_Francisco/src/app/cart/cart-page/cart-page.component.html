@@ -1,0 +1,17 @@
+<main>
+    <h2>My Cart</h2>
+    <div *ngIf="cartItems.length > 0 else noItemsInCart">
+        <div class="cart-entry" *ngFor="let item of cartItems">
+            <div class="cart-entry-image" [style.backgroundImage]="'url(' + item.product.photo + ')'"></div>
+            <h2>{{ item.product.name }}</h2>
+            <div>Qty: {{ item.quantity }}</div>
+            <div>PHP {{ item.quantity * item.product.price | number: '1.2-2' }}</div>
+        </div>
+    </div>
+</main>
+
+<ng-template #noItemsInCart>
+    <main>
+        <div>No items in your cart yet. Go shopping!</div>
+    </main>
+</ng-template>

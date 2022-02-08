@@ -1,0 +1,32 @@
+main {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.cart-entry {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    background: white;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 3rem;
+    padding: 2rem;
+
+    & + & {
+        margin-top: 2rem;
+    }
+
+    &-image {
+        flex: 0 0 7%;
+        min-height: 60px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    & h2 {
+        flex: 1 0 auto;
+        margin: 0;
+    }
+}

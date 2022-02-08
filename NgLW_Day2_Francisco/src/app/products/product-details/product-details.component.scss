@@ -1,0 +1,31 @@
+.product {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1rem;
+
+    img {
+        float: left;
+    }
+
+    &-add {
+        input {
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+.text-danger {
+    color: red;
+}
+
+.error {
+    width: 100%;
+}
+
+// Clearfix from https://www.w3schools.com/howto/howto_css_clearfix.asp
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

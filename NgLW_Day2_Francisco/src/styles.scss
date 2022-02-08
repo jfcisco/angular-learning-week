@@ -1,0 +1,15 @@
+:root {
+    box-sizing: border-box;
+    --font-color: rgb(31, 29, 29);
+    --font-stack: Arial, sans-serif;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--font-color);
+    background-color: hsl(0, 0%, 85%);
+}

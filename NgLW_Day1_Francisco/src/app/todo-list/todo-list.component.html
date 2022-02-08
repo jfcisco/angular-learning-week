@@ -1,0 +1,23 @@
+<div class="todo-container">
+    <h1>My Tasks</h1>
+
+    <ul class="todo-list" *ngIf="tasks.length > 0; else noTasksMessage">
+        <li class="todo-item" *ngFor="let task of tasks; let i = index" [class.completed]="task.complete">
+            <input class="todo-item-checkbox" type="checkbox" [(ngModel)]="task.complete">
+            <span class="todo-item-title">{{ task.title }}</span>
+            
+            <button class="todo-item-delete" (click)="deleteTodoAt(i)">Delete</button>
+        </li>
+    </ul>
+    
+    
+    <div class="add-todo">
+        <input class="add-todo-input" type="text" placeholder="Enter task..." 
+            [(ngModel)]="newTask" (keyup.enter)="addTodo()">
+        <button class="add-todo-button" [disabled]="!newTask" (click)="addTodo()">Add</button>
+    </div>
+</div>
+
+<ng-template #noTasksMessage>
+    <div class="no-tasks-msg">You have no tasks!</div>
+</ng-template>

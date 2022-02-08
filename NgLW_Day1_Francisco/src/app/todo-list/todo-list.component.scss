@@ -1,0 +1,107 @@
+$padding: 1.15rem;
+
+h1, ul {
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.75rem;
+    padding: 1.2rem $padding;
+}
+
+.todo {
+    &-container {
+        max-width: 600px;
+        width: auto;
+        margin: 2rem auto 0;
+        font-family: var(--font-stack);
+
+        background-color: white;
+    }
+
+    &-list {
+        padding: 0;
+    }
+
+    &-item {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: 1.15rem;
+        padding: $padding;
+        list-style-type: none;
+        border-top: 1px solid rgba(128, 128, 128, 0.377);
+
+        &.completed > &-title {
+            text-decoration: line-through;
+        }
+
+        &-checkbox {
+            flex: 0 0 5%;
+            min-height: 0.9rem;
+            cursor: pointer;
+        }
+
+        &-title {
+            flex: auto;
+        }
+
+        &-delete {
+            flex: 0 1 20%;
+            cursor: pointer;
+            border: none;
+            padding: 0.5rem 1rem;        
+            text-transform: uppercase;
+            color: white;
+            background-color: #e05353;
+            transition: background-color 100ms ease-in;
+    
+            &:hover, &:focus {
+                background-color: hsl(0, 69%, 50%); 
+            }
+        }
+    }
+
+}
+
+.add-todo {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1rem;
+    padding: $padding;
+    border-top: 1px solid rgba(128, 128, 128, 0.377);
+
+    &-input {
+        flex: auto;
+        border: none;
+        font-size: 1.15rem;
+    }
+
+    &-button {
+        flex: 0 1 20%;
+        cursor: pointer;
+        border: none;
+        padding: 0.5rem 1rem;       
+        text-transform: uppercase;
+        background-color: hsl(112, 40%, 60%);
+        color: white;
+        transition: background-color 100ms ease-in;
+
+        &:hover, &:focus {
+            background-color: hsl(112, 40%, 55%);    
+        }
+
+        &:disabled {
+            background-color: rgb(158, 150, 150);
+        }
+    }
+}
+
+.no-tasks-msg {
+    padding: $padding;
+    font-size: 1.15rem;
+}

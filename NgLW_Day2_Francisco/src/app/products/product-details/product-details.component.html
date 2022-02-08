@@ -1,0 +1,25 @@
+<main *ngIf="product else productNotFound" class="product clearfix">
+    <div>
+        <a routerLink="">&lt; All Products</a>
+    </div>
+
+    <img [src]="product.photo" alt="{{ product.name }} photo">
+    <h2>{{ product.name }}</h2>
+    <p>PHP {{ product.price }}</p>
+
+    <div class="product-add">
+        <input id="quantity" type="number" [formControl]="quantityInput" min="1" step="1">
+        <button (click)="addToCart()" [disabled]="quantityInput.invalid">Add to Cart</button>
+        <div *ngIf="quantityInput.invalid && quantityInput.touched" class="text-danger error">
+            <span *ngIf="quantityInput.errors?.['required']">Please enter a quantity.</span>
+            <span *ngIf="quantityInput.errors?.['min']">Please enter a quantity that is 1 or greater.</span>
+            <span *ngIf="quantityInput.errors?.['integer']">Please enter only integers or whole numbers</span>
+        </div>
+    </div>
+</main>
+
+<ng-template #productNotFound>
+    <main class="product">
+        <div>Product not found :(</div>
+    </main>
+</ng-template>
